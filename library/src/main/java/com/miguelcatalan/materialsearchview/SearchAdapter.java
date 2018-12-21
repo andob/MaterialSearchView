@@ -20,7 +20,8 @@ import java.util.List;
  *
  * @author Miguel Catalan Bañuls
  */
-public class SearchAdapter extends BaseAdapter implements Filterable {
+public class SearchAdapter extends BaseAdapter implements Filterable
+{
 
     private ArrayList<String> data;
     private String[] suggestions;
@@ -28,48 +29,58 @@ public class SearchAdapter extends BaseAdapter implements Filterable {
     private LayoutInflater inflater;
     private boolean ellipsize;
 
-    public SearchAdapter(Context context, String[] suggestions) {
-        inflater = LayoutInflater.from(context);
-        data = new ArrayList<>();
-        this.suggestions = suggestions;
+    public SearchAdapter(Context context, String[] suggestions)
+    {
+        inflater=LayoutInflater.from(context);
+        data=new ArrayList<>();
+        this.suggestions=suggestions;
     }
 
-    public SearchAdapter(Context context, String[] suggestions, Drawable suggestionIcon, boolean ellipsize) {
-        inflater = LayoutInflater.from(context);
-        data = new ArrayList<>();
-        this.suggestions = suggestions;
-        this.suggestionIcon = suggestionIcon;
-        this.ellipsize = ellipsize;
+    public SearchAdapter(Context context, String[] suggestions, Drawable suggestionIcon, boolean ellipsize)
+    {
+        inflater=LayoutInflater.from(context);
+        data=new ArrayList<>();
+        this.suggestions=suggestions;
+        this.suggestionIcon=suggestionIcon;
+        this.ellipsize=ellipsize;
     }
 
     @Override
-    public Filter getFilter() {
-        Filter filter = new Filter() {
+    public Filter getFilter()
+    {
+        Filter filter=new Filter()
+        {
             @Override
-            protected FilterResults performFiltering(CharSequence constraint) {
-                FilterResults filterResults = new FilterResults();
-                if (!TextUtils.isEmpty(constraint)) {
+            protected FilterResults performFiltering(CharSequence constraint)
+            {
+                FilterResults filterResults=new FilterResults();
+                if (!TextUtils.isEmpty(constraint))
+                {
 
                     // Retrieve the autocomplete results.
-                    List<String> searchData = new ArrayList<>();
+                    List<String> searchData=new ArrayList<>();
 
-                    for (String string : suggestions) {
-                        if (string.toLowerCase().startsWith(constraint.toString().toLowerCase())) {
+                    for (String string : suggestions)
+                    {
+                        if (string.toLowerCase().contains(constraint.toString().toLowerCase()))
+                        {
                             searchData.add(string);
                         }
                     }
 
                     // Assign the data to the FilterResults
-                    filterResults.values = searchData;
-                    filterResults.count = searchData.size();
+                    filterResults.values=searchData;
+                    filterResults.count=searchData.size();
                 }
                 return filterResults;
             }
 
             @Override
-            protected void publishResults(CharSequence constraint, FilterResults results) {
-                if (results.values != null) {
-                    data = (ArrayList<String>) results.values;
+            protected void publishResults(CharSequence constraint, FilterResults results)
+            {
+                if (results.values!=null)
+                {
+                    data=(ArrayList<String>)results.values;
                     notifyDataSetChanged();
                 }
             }
@@ -78,37 +89,44 @@ public class SearchAdapter extends BaseAdapter implements Filterable {
     }
 
     @Override
-    public int getCount() {
+    public int getCount()
+    {
         return data.size();
     }
 
     @Override
-    public Object getItem(int position) {
+    public Object getItem(int position)
+    {
         return data.get(position);
     }
 
     @Override
-    public long getItemId(int position) {
+    public long getItemId(int position)
+    {
         return position;
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-
+    public View getView(int position, View convertView, ViewGroup parent)
+    {
         SuggestionsViewHolder viewHolder;
 
-        if (convertView == null) {
-            convertView = inflater.inflate(R.layout.suggest_item, parent, false);
-            viewHolder = new SuggestionsViewHolder(convertView);
+        if (convertView==null)
+        {
+            convertView=inflater.inflate(R.layout.suggest_item, parent, false);
+            viewHolder=new SuggestionsViewHolder(convertView);
             convertView.setTag(viewHolder);
-        } else {
-            viewHolder = (SuggestionsViewHolder) convertView.getTag();
+        }
+        else
+        {
+            viewHolder=(SuggestionsViewHolder)convertView.getTag();
         }
 
-        String currentListData = (String) getItem(position);
+        String currentListData=(String)getItem(position);
 
         viewHolder.textView.setText(currentListData);
-        if (ellipsize) {
+        if (ellipsize)
+        {
             viewHolder.textView.setSingleLine();
             viewHolder.textView.setEllipsize(TextUtils.TruncateAt.END);
         }
@@ -116,15 +134,18 @@ public class SearchAdapter extends BaseAdapter implements Filterable {
         return convertView;
     }
 
-    private class SuggestionsViewHolder {
+    private class SuggestionsViewHolder
+    {
 
         TextView textView;
         ImageView imageView;
 
-        public SuggestionsViewHolder(View convertView) {
-            textView = (TextView) convertView.findViewById(R.id.suggestion_text);
-            if (suggestionIcon != null) {
-                imageView = (ImageView) convertView.findViewById(R.id.suggestion_icon);
+        public SuggestionsViewHolder(View convertView)
+        {
+            textView=(TextView)convertView.findViewById(R.id.suggestion_text);
+            if (suggestionIcon!=null)
+            {
+                imageView=(ImageView)convertView.findViewById(R.id.suggestion_icon);
                 imageView.setImageDrawable(suggestionIcon);
             }
         }
