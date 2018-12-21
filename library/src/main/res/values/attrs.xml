@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="MaterialSearchView">
-        <attr name="searchBackground" format="integer" />
-        <attr name="searchVoiceIcon" format="integer" />
-        <attr name="searchCloseIcon" format="integer" />
-        <attr name="searchBackIcon" format="integer" />
-        <attr name="searchSuggestionIcon" format="integer" />
-        <attr name="searchSuggestionBackground" format="integer" />
-        <attr name="android:hint" />
-        <attr name="android:textColor" />
-        <attr name="android:textColorHint" />
+        <attr name="msv_searchBackground" format="integer" />
+        <attr name="msv_searchVoiceIcon" format="integer" />
+        <attr name="msv_searchCloseIcon" format="integer" />
+        <attr name="msv_searchBackIcon" format="integer" />
+        <attr name="msv_searchSuggestionIcon" format="integer" />
+        <attr name="msv_searchSuggestionBackground" format="integer" />
+        <attr name="msv_hint" format="string"/>
+        <attr name="msv_textColor" format="color"/>
+        <attr name="msv_textColorHint" format="color"/>
     </declare-styleable>
 </resources>

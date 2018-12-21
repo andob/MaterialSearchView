@@ -133,47 +133,47 @@ public class MaterialSearchView extends FrameLayout implements Filter.FilterList
 
         if (a!=null)
         {
-            if (a.hasValue(R.styleable.MaterialSearchView_searchBackground))
+            if (a.hasValue(R.styleable.MaterialSearchView_msv_searchBackground))
             {
-                setBackground(a.getDrawable(R.styleable.MaterialSearchView_searchBackground));
+                setBackground(a.getDrawable(R.styleable.MaterialSearchView_msv_searchBackground));
             }
 
-//            if (a.hasValue(R.styleable.MaterialSearchView_android_textColor)) {
+//            if (a.hasValue(R.styleable.MaterialSearchView_msv_textColor)) {
 //                setTextColor(a.getColor(R.styleable.MaterialSearchView_android_textColor, 0));
 //            }
 //
-//            if (a.hasValue(R.styleable.MaterialSearchView_android_textColorHint)) {
+//            if (a.hasValue(R.styleable.MaterialSearchView_msv_textColorHint)) {
 //                setHintTextColor(a.getColor(R.styleable.MaterialSearchView_android_textColorHint, 0));
 //            }
 
-            if (a.hasValue(R.styleable.MaterialSearchView_android_hint))
+            if (a.hasValue(R.styleable.MaterialSearchView_msv_hint))
             {
-                setHint(a.getString(R.styleable.MaterialSearchView_android_hint));
+                setHint(a.getString(R.styleable.MaterialSearchView_msv_hint));
             }
 
-            if (a.hasValue(R.styleable.MaterialSearchView_searchVoiceIcon))
+            if (a.hasValue(R.styleable.MaterialSearchView_msv_searchVoiceIcon))
             {
-                setVoiceIcon(a.getDrawable(R.styleable.MaterialSearchView_searchVoiceIcon));
+                setVoiceIcon(a.getDrawable(R.styleable.MaterialSearchView_msv_searchVoiceIcon));
             }
 
-            if (a.hasValue(R.styleable.MaterialSearchView_searchCloseIcon))
+            if (a.hasValue(R.styleable.MaterialSearchView_msv_searchCloseIcon))
             {
-                setCloseIcon(a.getDrawable(R.styleable.MaterialSearchView_searchCloseIcon));
+                setCloseIcon(a.getDrawable(R.styleable.MaterialSearchView_msv_searchCloseIcon));
             }
 
-            if (a.hasValue(R.styleable.MaterialSearchView_searchBackIcon))
+            if (a.hasValue(R.styleable.MaterialSearchView_msv_searchBackIcon))
             {
-                setBackIcon(a.getDrawable(R.styleable.MaterialSearchView_searchBackIcon));
+                setBackIcon(a.getDrawable(R.styleable.MaterialSearchView_msv_searchBackIcon));
             }
 
-            if (a.hasValue(R.styleable.MaterialSearchView_searchSuggestionBackground))
+            if (a.hasValue(R.styleable.MaterialSearchView_msv_searchSuggestionBackground))
             {
-                setSuggestionBackground(a.getDrawable(R.styleable.MaterialSearchView_searchSuggestionBackground));
+                setSuggestionBackground(a.getDrawable(R.styleable.MaterialSearchView_msv_searchSuggestionBackground));
             }
 
-            if (a.hasValue(R.styleable.MaterialSearchView_searchSuggestionIcon))
+            if (a.hasValue(R.styleable.MaterialSearchView_msv_searchSuggestionIcon))
             {
-                setSuggestionIcon(a.getDrawable(R.styleable.MaterialSearchView_searchSuggestionIcon));
+                setSuggestionIcon(a.getDrawable(R.styleable.MaterialSearchView_msv_searchSuggestionIcon));
             }
 
             a.recycle();
