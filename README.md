@@ -244,6 +244,14 @@ Pull requests are more than welcome, help me and others improve this awesome lib
 
 The code is based in the Krishnakapil original concept.
 
+# Mods
+
+```
+implementation ('com.github.andob:MaterialSearchView:1.4.5') {
+	exclude group: 'com.android.support'
+}
+```
+
 # License
 	Copyright 2015 Miguel Catalan Bañuls
 
