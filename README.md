@@ -247,9 +247,13 @@ The code is based in the Krishnakapil original concept.
 # Mods
 
 ```
-implementation ('com.github.andob:MaterialSearchView:1.4.5') {
-	exclude group: 'com.android.support'
+repositories {
+    maven { url 'http://www.andob.info/' }
 }
+```
+
+```
+implementation 'ro.andob.materialsearchview:MaterialSearchView:1.4.6'
 ```
 
 # License

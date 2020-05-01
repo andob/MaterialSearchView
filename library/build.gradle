@@ -1,22 +1,12 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
-
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.novoda:bintray-release:0.3.4'
-    }
-}
+apply plugin: 'digital.wup.android-maven-publish'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 29
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 23
+        targetSdkVersion 29
         versionCode 1
         versionName "1.4.0"
     }
@@ -29,16 +19,19 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'com.android.support:design:23.1.1'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
 }
 
-publish {
-    userOrg = 'miguelcatalan'
-    groupId = 'com.miguelcatalan'
-    artifactId = 'materialsearchview'
-    publishVersion = '1.4.0'
-    desc = 'Cute library to implement SearchView in a Material Design Approach'
-    website = 'https://github.com/MiguelCatalan/MaterialSearchView'
+publishing {
+    publications {
+        android.libraryVariants.all { variant ->
+            "maven${variant.name.capitalize()}Aar"(MavenPublication) {
+                from components.findByName("android${variant.name.capitalize()}")
+                groupId "ro.andob.materialsearchview"
+                artifactId 'MaterialSearchView'
+                version '1.4.6'
+            }
+        }
+    }
 }
