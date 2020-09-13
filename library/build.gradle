@@ -2,13 +2,13 @@ apply plugin: 'com.android.library'
 apply plugin: 'digital.wup.android-maven-publish'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
-        versionName "1.4.0"
+        versionName "1.4.8"
     }
     buildTypes {
         release {
@@ -19,8 +19,8 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
 }
 
 publishing {
@@ -38,7 +38,7 @@ publishing {
                 from components.findByName("android${variant.name.capitalize()}")
                 groupId "ro.andob.materialsearchview"
                 artifactId 'MaterialSearchView'
-                version '1.4.7'
+                version '1.4.8'
             }
         }
     }
