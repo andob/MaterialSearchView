@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button stickyButton;
     private Button tabButton;
     private Button inputTypeButton;
+    private Button modsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tabButton.setOnClickListener(this);
         inputTypeButton = (Button) findViewById(R.id.button_input_type);
         inputTypeButton.setOnClickListener(this);
+        modsButton = (Button) findViewById(R.id.button_mods);
+        modsButton.setOnClickListener(this);
     }
 
     @Override
@@ -55,6 +58,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button_input_type:
                 intent = new Intent(this, InputTypeActivity.class);
+                break;
+            case R.id.button_mods:
+                intent = new Intent(this, ModsActivity.class);
                 break;
         }
         if (intent != null) {

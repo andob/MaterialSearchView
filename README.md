@@ -253,7 +253,7 @@ repositories {
 ```
 
 ```
-implementation 'ro.andob.materialsearchview:MaterialSearchView:1.4.8'
+implementation 'ro.andob.materialsearchview:MaterialSearchView:1.4.9'
 ```
 
 # License

@@ -8,7 +8,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
-        versionName "1.4.8"
+        versionName "1.4.9"
     }
     buildTypes {
         release {
@@ -38,7 +38,7 @@ publishing {
                 from components.findByName("android${variant.name.capitalize()}")
                 groupId "ro.andob.materialsearchview"
                 artifactId 'MaterialSearchView'
-                version '1.4.8'
+                version '1.4.9'
             }
         }
     }

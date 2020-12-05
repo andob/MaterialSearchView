@@ -54,6 +54,14 @@
                 android:layout_height="wrap_content"
                 android:text="Input type"
                 android:textColor="@color/theme_secondary_text" />
+
+            <Button
+                android:id="@+id/button_mods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mods"
+                android:textColor="@color/theme_secondary_text" />
+
         </LinearLayout>
 
     </RelativeLayout>

@@ -40,6 +40,10 @@
             android:name=".InputTypeActivity"
             android:label="@string/title_activity_input_type">
         </activity>
+        <activity
+            android:name=".ModsActivity"
+            android:label="@string/title_activity_mods">
+        </activity>
     </application>
 
 </manifest>
