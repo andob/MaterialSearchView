@@ -248,7 +248,7 @@ The code is based in the Krishnakapil original concept.
 
 ```
 repositories {
-    maven { url 'http://maven.andob.info/repository/open_source' }
+    maven { url 'https://maven.andob.info/repository/open_source' }
 }
 ```
 
