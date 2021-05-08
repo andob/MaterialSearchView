@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'digital.wup.android-maven-publish'
+apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion 30
@@ -20,25 +20,25 @@ android {
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.google.android.material:material:1.3.0'
 }
 
-publishing {
-    publications {
-        repositories.maven {
-            url 'https://maven.andob.info/repository/open_source/'
-            credentials {
-                username "$System.env.MAVEN_PUBLISH_USERNAME"
-                password "$System.env.MAVEN_PUBLISH_PASSWORD"
+project.afterEvaluate {
+    publishing {
+        publications {
+            repositories.maven {
+                url 'https://maven.andob.info/repository/open_source/'
+                credentials {
+                    username "$System.env.MAVEN_PUBLISH_USERNAME"
+                    password "$System.env.MAVEN_PUBLISH_PASSWORD"
+                }
             }
-        }
 
-        android.libraryVariants.all { variant ->
-            "maven${variant.name.capitalize()}Aar"(MavenPublication) {
-                from components.findByName("android${variant.name.capitalize()}")
+            maven(MavenPublication) {
                 groupId "ro.andob.materialsearchview"
                 artifactId 'MaterialSearchView'
                 version '1.4.9'
+                artifact(bundleReleaseAar)
             }
         }
     }
